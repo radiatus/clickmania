@@ -80,6 +80,7 @@ class FormGame(QMainWindow):
     def paintEvent(self, event):
         qp = QPainter()
         qp.begin(self)
+        qp.setRenderHint(QPainter.Antialiasing)
         self.paint(qp)
         qp.end()
 
