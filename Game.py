@@ -16,7 +16,7 @@ class Game:
     __colorsCounts = 0
     __scoreColor = 1.2
 
-    # Ебанемка немного геттеров
+    # Немного геттеров
     @property
     def score(self):
         return self.__score
