@@ -74,7 +74,7 @@ class FormGame(QMainWindow):
 
     # Нажатие мышки на поле
     def mousePressEvent(self, QMouseEvent):
-        if self.__game.click(QMouseEvent.pos().x() - 105, QMouseEvent.pos().y()):
+        if self.__game.click(QMouseEvent.pos().x() - 108, QMouseEvent.pos().y() - 5):
             self.repaint()
 
     # Реакция на клик по кнопке
@@ -105,13 +105,12 @@ class FormGame(QMainWindow):
         qp.drawRect(105, 3, (25 * self.__game.columnCounts) + 5, (25 * self.__game.rowCounts) + 5)
 
         # Рисует поле шаров, если игра создана
-        brush = QBrush(Qt.SolidPattern)
         self.__scoreLabel.setText(str(self.__game.score))
         for y in range(self.__game.rowCounts):
             for x in range(self.__game.columnCounts):
-                brush.setColor(self.__colors[self.__game.field[y][x]])
+                brush = QBrush(self.__colors[self.__game.field[y][x]])
                 qp.setBrush(brush)
-                qp.drawEllipse(x * 25 + 108, (y * 25) + 5, 25, 25)
+                qp.drawEllipse(x * 25 + 108, y * 25 + 5, 25, 25)
 
 # Запуск как main
 if __name__ == '__main__':
