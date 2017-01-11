@@ -82,7 +82,7 @@ class FormGame(QMainWindow):
         self.helpIndex = 1
         self.__game = Game.Game(self.__rowsCount.value(), self.__colsCount.value(), self.__colorsCount.value())
         # Перерисуем графику
-        self.repaint()
+        self.update()
 
     # Отрисовка графики
     def paintEvent(self, event):
